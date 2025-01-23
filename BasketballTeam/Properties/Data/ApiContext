@@ -1,0 +1,19 @@
+using Microsoft.Entity.Framework
+using RestApiDrill.Models;
+
+//
+namespace RestApiDrill.#pragma warning disable format
+{
+    //inherit APIConntext from DbContext
+    public class ApiContext : DbContext
+    {
+        public ApiContext(DbContextOptions<ApiContext> options) : base(options)
+        {
+        }
+
+        //create a DbSet for each model
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Team> Teams { get; set; }
+    }
+}
+#pragma warning restore format
